@@ -17,44 +17,45 @@
     <script src="func.js"></script>
 
     <script type="module">
-        // Defined test cases
+        // Defined test case for testing a function formatTimeStamp
         function runTests() {
-            const timestampTest = 1635798000;
-            const formattedDate = formatTimestamp(timestampTest);
-            console.log(formattedDate);
+            const timestampTest = 1635798000
+            const formattedDate = formatTimestamp(timestampTest)
 
-            const expected = "November 1, 2021 at 8:20 PM";
+            console.log('Input time stamp for test', timestampTest)
+            console.log('expected output', formattedDate)
+
+            const expected = 'November 1, 2021 at 8:20 PM'
 
             // Test case
             console.assert(
                 formattedDate === expected,
-                "Test case failed: formatTimestamp does not format timestamp correctly."
-            );
+                'Test case failed: formatTimestamp does not format timestamp correctly.'
+            )
 
             // Log the result to the console
             if (formattedDate === expected) {
-                console.log("Test passed successfully!");
+                console.log('Test passed successfully!')
             } else {
-                console.error("Test failed!");
+                console.error('Test failed!')
             }
         }
 
         // Run the tests when the page is fully loaded
-        window.onload = runTests;
+        window.onload = runTests
     </script>
 
     <script>
         $(document).ready(function () {
             // let checkboxSelection = 0
-            $("#contentDiv").hide();
+            $('#contentDiv').hide()
 
-            fetchData(API_URL_DEV);
-        });
+            fetchData(API_URL_DEV)
+        })
     </script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
     <link rel="stylesheet" href="index.css" />
 </head>
 
