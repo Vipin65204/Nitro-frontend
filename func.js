@@ -4,7 +4,7 @@
             let dd;
 
             let sourceData = {
-                isLoading: true,
+                // isLoading: true,
                 checkboxSelection: 0,
                 sortBy: ['weekNumber', 'author', 'location'],
                 viewBy: ['author', 'formattedTime', 'author'],
@@ -136,11 +136,12 @@
 
  //function to create date and time from timestamp
                    
-     const fetchData = async () => {
+     const fetchData = async (url) => {
 
 
          try {
-    const response = await axios.get('http://localhost:3000/posts');
+    // const response = await axios.get('http://localhost:3000/posts');
+    const response = await axios.get(url);
  
                     sourceData.data = response.data;
                    

@@ -12,22 +12,16 @@
 
     <!-- Include Axios from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script src="apiURL.js"></script> -->
+    <script src="apiURL.js"></script>
     <script src="func.js"></script>
 
 
     <script>
         $(document).ready(function () {
-
-
             // let checkboxSelection = 0
             $('#contentDiv').hide();
 
-
-            fetchData();
-
-
-
+            fetchData(API_URL_DEV);
         });
 
 
