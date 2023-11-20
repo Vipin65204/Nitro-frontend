@@ -1,0 +1,85 @@
+ul,
+#myUL {
+    list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+    cursor: pointer;
+    user-select: none;
+    /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}
+
+ .profile-image {
+     border-radius: 50%;
+     width: 50px;
+     /* Adjust as needed */
+     height: 50px;
+     /* Adjust as needed */
+     object-fit: cover;
+ }
+
+ /* Add margin or spacing between elements */
+ .post-container {
+     margin-bottom: 20px;
+ }
+
+/* radio button to look like checkbox */
+input[type="radio"] {
+    display: none;
+}
+
+/* Custom styling for the fake checkbox */
+.fake-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Style the fake checkbox when the radio button is checked */
+input[type="radio"]:checked+label .fake-checkbox {
+    background-color: #2196F3;
+    /* Change the color when checked */
+    border: 1px solid #2196F3;
+}
+
+/* Hide default radio button label */
+input[type="radio"]+label {
+    display: inline-block;
+    vertical-align: top;
+}
+/* radio button to look like checkbox end*/
