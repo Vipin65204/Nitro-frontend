@@ -12,8 +12,41 @@
 
     <!-- Include Axios from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+
     <script src="apiURL.js"></script>
+    <script src="timeStamp.js"></script>
+
     <script src="func.js"></script>
+
+    <script type="module">
+        // Defined test cases
+        function runTests() {
+            const timestampTest = 1635798000;
+            const formattedDate = formatTimestamp(timestampTest);
+            console.log(formattedDate);
+
+            const expected = 'November 1, 2021 at 8:20 PM';
+
+            // Test case
+            console.assert(
+                formattedDate === expected,
+                'Test case failed: formatTimestamp does not format timestamp correctly.'
+            );
+
+            // Log the result to the console
+            if (formattedDate === expected) {
+                console.log('Test passed successfully!');
+            } else {
+                console.error('Test failed!');
+            }
+        }
+
+        // Run the tests when the page is fully loaded
+        window.onload = runTests;
+    </script>
 
 
     <script>

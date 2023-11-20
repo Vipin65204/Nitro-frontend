@@ -93,54 +93,12 @@
 
                     } // end of populate
 
-//     fetchData = ()=>{
-
-
-//          axios.get('http://localhost:3000/posts')
-//         //  axios.get(API_URL_DEV)
-//                 .then(function (response) {
-//                     // console.log('Axios response:', response.data);
-
-//                     // Append response.data to sourceData.data
-//                     sourceData.data = response.data;
-                   
-
-//                     // // Add the "weekNumber" and "year" properties to each item in the array
-//                     sourceData.data.forEach(item => {
-//                         const { weekNumber, year } = getWeekNumAndYear(item.time);
-//                         item.weekNumber = weekNumber;
-//                         item.year = year;
-//                         item.formattedTime = formatTimestamp(item.time);
-//                     });
-
-
-
-
                 
-//                     populate();
-//                     editFunction();
-//                     saveEdit();
-
-//                 })
-//                 .catch(function (error) {
-//                     console.error('Axios error:', error);
-//                 });
-
-
-// // radio button listner
-// // radioOnchange
-// sortSelection();
-          
-
-// }
-
- //function to create date and time from timestamp
-                   
      const fetchData = async (url) => {
 
 
          try {
-    // const response = await axios.get('http://localhost:3000/posts');
+   
     const response = await axios.get(url);
  
                     sourceData.data = response.data;
@@ -189,20 +147,20 @@ sortSelection();
                    
 
 // timestamp formatting
-                    function formatTimestamp(timestamp) {
-                        const date = new Date(timestamp * 1000);
+                    // function formatTimestamp(timestamp) {
+                    //     const date = new Date(timestamp * 1000);
+                    //     const options = {
+                    //         year: 'numeric',
+                    //         month: 'long',
+                    //         day: 'numeric',
+                    //         hour: 'numeric',
+                    //         minute: 'numeric',
+                    //         hour12: true
+                    //     };
 
-                        const options = {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                            hour: 'numeric',
-                            minute: 'numeric',
-                            hour12: true
-                        };
-
-                        return date.toLocaleString('en-US', options);
-                    }
+                    //     return date.toLocaleString('en-US', options);
+                    // }
+                   
 
 //editFunction 
 editFunction = () =>{
