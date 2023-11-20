@@ -23,22 +23,23 @@
                         //  2 == location
 
                         sourceData.data.forEach(entry => {
-                            //  uniqueSet.add(entry.weekNumber);
-                            const chkbox = sourceData.checkboxSelection
-                            // console.log('chkbk',chkbox);
+                          
+                            const chkbox = sourceData.checkboxSelection                            
                             const sortByValue = entry[sourceData.sortBy[chkbox]];
                             uniqueSet.add(sortByValue);
+
                         });
+
                         const uniqueArray = Array.from(uniqueSet);
                         sourceData.uniqueArrayObj = uniqueArray
-                        console.log("uniquey array", uniqueArray);
-
+                        
+                        
                         const $ulElement = $('#myUL');
                         $.each(sourceData.uniqueArrayObj, function (index, wk) {
                             // Create a new list item element with a span inside it
-                            const listItem = $('<li><span class="caret">week ' + wk + '</span></li>');
+                            const listItem = $('<li><span class="caret"> ' + wk + '</span></li>');
 
-                            // Append the list item element to the unordered list
+                            // Append the list item element to the list
                             $ulElement.append(listItem);
                             const ulElementNested = $('<ul class="nested"></ul>');
 
@@ -46,7 +47,7 @@
 
 
                             // ------ end of post by author --------
-                            console.log('wk', wk);
+                            
                             //  ------ post by location ------
                             const locationPost = sourceData.data.filter(item => item[sourceData.sortBy[sourceData.checkboxSelection]] === wk);
                             locationPost.forEach(postsByWeek => {
@@ -91,7 +92,8 @@
                             });
                         }
 
-                    } // end of populate
+                    } 
+                    //---- end of populate data-----
 
                 
      const fetchData = async (url) => {
@@ -146,20 +148,7 @@ sortSelection();
 
                    
 
-// timestamp formatting
-                    // function formatTimestamp(timestamp) {
-                    //     const date = new Date(timestamp * 1000);
-                    //     const options = {
-                    //         year: 'numeric',
-                    //         month: 'long',
-                    //         day: 'numeric',
-                    //         hour: 'numeric',
-                    //         minute: 'numeric',
-                    //         hour12: true
-                    //     };
 
-                    //     return date.toLocaleString('en-US', options);
-                    // }
                    
 
 //editFunction 
