@@ -13,5 +13,5 @@ APIs Used [All added as script for the ease of execution] :
 3. JQuery - For DOM manipulation .
 4. Picsum Photos - For random user image for posts.
 
-** Used simple text validation in edit for to accept only string as input.
+** Used simple text validation in edit to accept only string as input.
 ** used console.assert function to do testing .Added in index.html file as script type module.
