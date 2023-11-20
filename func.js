@@ -93,15 +93,55 @@
 
                     } // end of populate
 
-fetchData = ()=>{
+//     fetchData = ()=>{
 
 
-         axios.get('http://localhost:3000/posts')
-        //  axios.get(API_URL_DEV)
-                .then(function (response) {
-                    // console.log('Axios response:', response.data);
+//          axios.get('http://localhost:3000/posts')
+//         //  axios.get(API_URL_DEV)
+//                 .then(function (response) {
+//                     // console.log('Axios response:', response.data);
 
-                    // Append response.data to sourceData.data
+//                     // Append response.data to sourceData.data
+//                     sourceData.data = response.data;
+                   
+
+//                     // // Add the "weekNumber" and "year" properties to each item in the array
+//                     sourceData.data.forEach(item => {
+//                         const { weekNumber, year } = getWeekNumAndYear(item.time);
+//                         item.weekNumber = weekNumber;
+//                         item.year = year;
+//                         item.formattedTime = formatTimestamp(item.time);
+//                     });
+
+
+
+
+                
+//                     populate();
+//                     editFunction();
+//                     saveEdit();
+
+//                 })
+//                 .catch(function (error) {
+//                     console.error('Axios error:', error);
+//                 });
+
+
+// // radio button listner
+// // radioOnchange
+// sortSelection();
+          
+
+// }
+
+ //function to create date and time from timestamp
+                   
+     const fetchData = async () => {
+
+
+         try {
+    const response = await axios.get('http://localhost:3000/posts');
+ 
                     sourceData.data = response.data;
                    
 
@@ -121,31 +161,20 @@ fetchData = ()=>{
                     editFunction();
                     saveEdit();
 
-                })
-                .catch(function (error) {
+               } catch (error) {
+                
                     console.error('Axios error:', error);
-                });
+                };
 
 
 // radio button listner
-            $('input[name="group1"]').on('change', function () {
-                // Get the selected radio button value
-                const selectedValue = $('input[name="group1"]:checked').val();
-                sourceData.checkboxSelection = selectedValue;
-
-                $('#myUL').empty();
-                populate()
-
-
-                $('#contentDiv').hide();
-
-
-            });
+// radioOnchange
+sortSelection();
+          
 
 }
 
- //function to create date and time from timestamp
-                    function getWeekNumAndYear(timestamp) {
+ function getWeekNumAndYear(timestamp) {
                         const date = new Date(timestamp * 1000); // Convert seconds to milliseconds
                         const onejan = new Date(date.getFullYear(), 0, 1);
                         const millisecsInDay = 86400000; // 24 * 60 * 60 * 1000
@@ -188,7 +217,7 @@ editFunction = () =>{
 
 }
    //saveEdit function
-   saveEdit =() =>{
+ saveEdit =() =>{
                         $('#saveChangesBtn').click(function () {
 
 
@@ -230,3 +259,19 @@ editFunction = () =>{
 
                     });
    }
+
+   sortSelection=()=>{
+  $('input[name="group1"]').on('change', function () {
+                // Get the selected radio button value
+                const selectedValue = $('input[name="group1"]:checked').val();
+                sourceData.checkboxSelection = selectedValue;
+
+                $('#myUL').empty();
+                populate()
+
+
+                $('#contentDiv').hide();
+
+
+            });
+}
